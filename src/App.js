@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import ReactFlow, { Background, Controls } from 'reactflow';
+import 'reactflow/dist/style.css';
 import './App.css';
+import CustomNode from './components/CustomNode/CustomNode';
+import UpdatingNode from './components/UpdatingNode/UpdatingNode';
+import AppBar from './components/AppBar/AppBar';
+import { createElement, useState } from 'react';
 
 function App() {
+  const componentMap = {
+    CustomNode: CustomNode,
+    UpdatingNode: UpdatingNode
+  };
+
+  const [currentComponent, setCurrentComponent] = useState('CustomNode');
+
+  const handleComponentChange = (componentName) => {
+    setCurrentComponent(componentName);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar handleComponentChange={handleComponentChange} componentMap={componentMap} />
+      {/* <CustomNode /> */}
+      {createElement(componentMap[currentComponent])}
     </div>
   );
 }
