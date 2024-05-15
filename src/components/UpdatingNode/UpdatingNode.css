@@ -1,0 +1,27 @@
+.updatenode__controls {
+    position: absolute;
+    right: 4rem;
+    top: 4rem;
+    z-index: 4;
+    font-size: 1.2rem;
+}
+
+.updatenode__controls label {
+    display: block;
+}
+
+.updatenode__bglabel {
+    margin-top: 10px;
+}
+
+.updatenode__checkboxwrapper {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.updatenode__controls input{
+    width: 200px;
+    height: 40px;
+    font-size: 1.3rem;
+}
