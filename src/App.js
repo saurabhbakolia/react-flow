@@ -6,12 +6,20 @@ import UpdatingNode from './components/UpdatingNode/UpdatingNode';
 import StressTest from './components/StressTest/StressTest';
 import AppBar from './components/AppBar/AppBar';
 import { createElement, useState } from 'react';
+import Hidden from './components/Hidden/Hidden';
+import DragHandle from './components/DragHandle/DragHandle';
+import EasyConnect from './components/EasyConnect/EasyConnect';
+import AddNodeOnEdgeDrop from './components/AddNodeOnEdgeDrop/AddNodeOnEdgeDrop';
 
 function App() {
   const componentMap = {
     CustomNode: CustomNode,
     UpdatingNode: UpdatingNode, 
-    StressTest: StressTest
+    StressTest: StressTest, 
+    Hidden: Hidden, 
+    DragHandle: DragHandle, 
+    EasyConnect: EasyConnect, 
+    AddNodeOnEdgeDrop: AddNodeOnEdgeDrop
   };
 
   const [currentComponent, setCurrentComponent] = useState('CustomNode');
